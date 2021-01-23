@@ -8,3 +8,4 @@ opencv-python
 flask_cors 
 gunicorn
 ipython
+matplotlib
