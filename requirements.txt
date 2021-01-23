@@ -1,0 +1,12 @@
+flask
+tensorflow
+sklearn.metrics im
+imutils
+pandas
+numpy
+pickle
+random
+shutil
+cv2
+os
+flask_cors 
