@@ -4,7 +4,6 @@ sklearn
 imutils
 pandas
 numpy
-shutil
 cv2
 os
 flask_cors 
