@@ -26,7 +26,7 @@ CORS(app, support_credentials=True)
 
 
 # load the learner
-model = pickle.load(open('RF_model.pkl', 'rb'))
+model = pickle.load(open('./model/RF_model.pkl', 'rb'))
 
 
 def predict_single(img_file):
