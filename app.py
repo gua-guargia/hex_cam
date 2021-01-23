@@ -26,7 +26,7 @@ CORS(app, support_credentials=True)
 
 
 # load the learner
-model = pickle.load(open('./model/RF_model.pkl', 'rb'))
+RFC_Model = pickle.load(open('./model/RF_model.pkl', 'rb'))
 
 
 def predict_single(img_file):
@@ -39,10 +39,9 @@ def predict_single(img_file):
 
     RFC_pred = RFC_Model.predict(test_img)
 
-    probs_list = RFC_pred[2].numpy()
+    
     return {
-        'category': classes[prediction[1].item()],
-        'probs': {c: round(float(probs_list[i]), 5) for (i, c) in enumerate(classes)}
+        'category': print(RFC_pred)}
     }
 
 # route for prediction
