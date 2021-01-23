@@ -1,6 +1,6 @@
 flask
 tensorflow
-sklearn.metrics im
+sklearn
 imutils
 pandas
 numpy
