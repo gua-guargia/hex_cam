@@ -5,5 +5,4 @@ imutils
 pandas
 numpy
 opencv-python
-os
 flask_cors 
