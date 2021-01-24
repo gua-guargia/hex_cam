@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
@@ -41,7 +40,8 @@ def predict_single(img_file):
 
     
     return {
-        'category': RFC_pred[1].item()
+        'category' : "Hello World"
+        #'category': RFC_pred[1].item()
     }
 
 # route for prediction
