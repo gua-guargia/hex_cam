@@ -9,3 +9,5 @@ flask_cors
 gunicorn
 ipython
 matplotlib
+fastai
+torch
