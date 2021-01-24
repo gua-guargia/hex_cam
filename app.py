@@ -41,7 +41,7 @@ def predict_single(img_file):
 
     
     return {
-        'category': RFC_pred[1].item()
+        'category': RFC_pred[0].item()
     }
 
 # route for prediction
