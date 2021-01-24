@@ -30,7 +30,7 @@ RFC_Model = pickle.load(open('./model/RF_model.pkl', 'rb'))
 
 def predict_single(img_file):
     'function to take image and return prediction'
-    test_image = cv2.imdecode(numpy.fromstring(img_file.read(), numpy.uint8), cv2.IMREAD_UNCHANGED)
+    test_image = cv2.imdecode(np.fromstring(img_file.read(), np.uint8), cv2.IMREAD_UNCHANGED)
    # test_image = cv2.imread(img_file)
     test_image = cv2.cvtColor(test_image, cv2.IMREAD_GRAYSCALE)
     test_image = cv2.resize(test_image, (224, 224))
