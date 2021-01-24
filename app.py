@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
 from tensorflow.keras.utils import to_categorical
 from sklearn.preprocessing import LabelBinarizer
 from sklearn.model_selection import train_test_split
@@ -7,9 +8,6 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from IPython.display import FileLink
 from imutils import paths
-from fastai.basic_train import load_learner
-from fastai.vision import open_image
-from flask_cors import CORS,cross_origin
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -28,9 +26,7 @@ CORS(app, support_credentials=True)
 
 
 # load the learner
-learn = load_learner(path='./model', file = 'RF_model.pkl')
-classes = learn.data.classes
-#RFC_Model = pickle.load(open('./model/RF_model.pkl', 'rb'))
+RFC_Model = pickle.load(open('./model/RF_model.pkl', 'rb'))
 
 
 def predict_single(img_file):
@@ -41,9 +37,11 @@ def predict_single(img_file):
     test_img = test_image.flatten().reshape(1, -1)
     
 
-    RFC_pred = learn.predict(test_img)
+    RFC_pred = RFC_Model.predict(test_img)
+
+    
     return {
-        'category': RFC_pred
+        'category': RFC_pred[1].item()
     }
 
 # route for prediction
