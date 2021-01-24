@@ -48,6 +48,11 @@ def predict_single(img_file):
 @app.route('/predict', methods=['POST'])
 def predict():
     return jsonify(predict_single(request.files['image']))
+def api_response():
+    from flask import jsonify
+    if request.method == 'POST':
+        return jsonify(**request.json)
 
 if __name__ == '__main__':
+    app.debug = True
     app.run()
